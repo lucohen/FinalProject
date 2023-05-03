@@ -1059,3 +1059,9 @@ AssetImportParameters requested are different than current active one (requested
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 10073.082349 seconds.
+  path: Assets/Scripts/GameParameters.cs
+  artifactKey: Guid(1de5a4d187c9249e2bb76d742ba7467f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/GameParameters.cs using Guid(1de5a4d187c9249e2bb76d742ba7467f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ccb8e92da7bc8d431a23ce4c3b7c08ad') in 0.143254 seconds 

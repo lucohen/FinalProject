@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class MinePlacer : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject MinePrefab;
 
-    // Update is called once per frame
-    void Update()
+    public void Place(Vector3 sandiePosition)
     {
-        
+        //what, where, rotation
+        Instantiate(MinePrefab, sandiePosition, Quaternion.identity);
     }
 }
