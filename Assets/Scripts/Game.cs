@@ -5,8 +5,7 @@ using UnityEngine;
 public class Game : MonoBehaviour
 {
     public UI UI;
-    public GameTimer GameTimer;
-    public Corgi Corgi;
+    public Sandie Sandie;
 
     private bool isRunning;
 
@@ -18,8 +17,8 @@ public class Game : MonoBehaviour
 
     public void Update()
     {
-        if (HasGameJustEnded())
-            EndGame();
+        //if (HasGameJustEnded())
+          //  EndGame();
     }
 
     public void StartGame()
@@ -29,21 +28,11 @@ public class Game : MonoBehaviour
         UI.HideStartScreen();
         UI.HideEndScreen();
 
-        GameTimer.StartTimer(5);
 
-        Corgi.StartGame();
+        Sandie.StartGame();
 
     }
 
-    public bool HasGameJustEnded()
-    {
-        if (isRunning && !GameTimer.IsRunning())
-        {
-            return true;
-        }
-
-        return false;
-    }
 
     public void EndGame()
     {
@@ -52,7 +41,6 @@ public class Game : MonoBehaviour
         UI.HideStartScreen();
         UI.ShowEndScreen();
 
-        GameTimer.StopTimer();
     }
 
     public bool IsRunning()

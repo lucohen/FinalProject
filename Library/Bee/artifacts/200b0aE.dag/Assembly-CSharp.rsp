@@ -344,6 +344,7 @@
 -r:"Library/Bee/artifacts/200b0aE.dag/Unity.VSCode.Editor.ref.dll"
 -r:"Library/Bee/artifacts/200b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/200b0aE.dag/UnityEngine.UI.ref.dll"
+"Assets/Scripts/CanvasGroupDisplayer.cs"
 "Assets/Scripts/Enemy.cs"
 "Assets/Scripts/Game.cs"
 "Assets/Scripts/GameParameters.cs"
@@ -351,6 +352,7 @@
 "Assets/Scripts/KeyboardInput.cs"
 "Assets/Scripts/MinePlacer.cs"
 "Assets/Scripts/Sandie.cs"
+"Assets/Scripts/SpriteTools.cs"
 "Assets/Scripts/TrashCan.cs"
 "Assets/Scripts/UI.cs"
 -langversion:9.0

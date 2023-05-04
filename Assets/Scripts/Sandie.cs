@@ -21,7 +21,7 @@ public class Sandie : MonoBehaviour
     public void Update()
     {
         if (HasGameJustEnded())
-            ResetCorgi();
+            ResetSandie();
 
         if (isPlastered)
             MoveRandomly();
@@ -138,11 +138,7 @@ public class Sandie : MonoBehaviour
             GetDrunk();
             print("Beer");
         }
-        if (col.gameObject.tag == "Bone")
-        {
-            ScoreKeeper.AddToScore(1);
-            print("Score = " + ScoreKeeper.GetScore());
-        }
+
         if (col.gameObject.tag == "Pill")
         {
             SoberUp();

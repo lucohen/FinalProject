@@ -9,12 +9,10 @@ public class UI : MonoBehaviour
     public CanvasGroup EndScreenCanvasGroup;
     public Text ScoreText;
     public Text TimeText;
-    public GameTimer GameTimer;
 
     public void Update()
-    {
-        ShowTime();
-        ShowScore();
+    { 
+       // ShowScore();
     }
 
 
@@ -38,13 +36,9 @@ public class UI : MonoBehaviour
         CanvasGroupDisplayer.Show(EndScreenCanvasGroup);
     }
 
-    public void ShowScore()
-    {
-        ScoreText.text = "Score: " + ScoreKeeper.GetScore();
-    }
+    //public void ShowScore()
+    //{
+    //    ScoreText.text = "Score: " + ScoreKeeper.GetScore();
+    //}
 
-    public void ShowTime()
-    {
-        TimeText.text = GameTimer.GetTimeAsString();
-    }
 }
