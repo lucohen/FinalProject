@@ -56,17 +56,17 @@
     <Analyzer Include="/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/MonoDevelop.Unity/Analyzers/Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets/Scripts/GameParameters.cs" />
+    <Compile Include="Assets/Scripts/MinePlacer.cs" />
+    <Compile Include="Assets/Scripts/SpriteTools.cs" />
+    <Compile Include="Assets/Scripts/KeyboardInput.cs" />
+    <Compile Include="Assets/Scripts/Item.cs" />
+    <Compile Include="Assets/Scripts/UI.cs" />
+    <Compile Include="Assets/Scripts/Game.cs" />
+    <Compile Include="Assets/Scripts/CanvasGroupDisplayer.cs" />
+    <Compile Include="Assets/Scripts/TrashCan.cs" />
     <Compile Include="Assets/Scripts/Sandie.cs" />
     <Compile Include="Assets/Scripts/Enemy.cs" />
-    <Compile Include="Assets/Scripts/Item.cs" />
-    <Compile Include="Assets/Scripts/Game.cs" />
-    <Compile Include="Assets/Scripts/TrashCan.cs" />
-    <Compile Include="Assets/Scripts/KeyboardInput.cs" />
-    <Compile Include="Assets/Scripts/GameParameters.cs" />
-    <Compile Include="Assets/Scripts/SpriteTools.cs" />
-    <Compile Include="Assets/Scripts/MinePlacer.cs" />
-    <Compile Include="Assets/Scripts/UI.cs" />
-    <Compile Include="Assets/Scripts/CanvasGroupDisplayer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
