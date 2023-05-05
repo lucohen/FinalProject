@@ -41,17 +41,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\GameParameters.cs" />
-     <Compile Include="Assets\Scripts\MinePlacer.cs" />
-     <Compile Include="Assets\Scripts\SpriteTools.cs" />
-     <Compile Include="Assets\Scripts\KeyboardInput.cs" />
-     <Compile Include="Assets\Scripts\Item.cs" />
-     <Compile Include="Assets\Scripts\UI.cs" />
-     <Compile Include="Assets\Scripts\Game.cs" />
-     <Compile Include="Assets\Scripts\CanvasGroupDisplayer.cs" />
-     <Compile Include="Assets\Scripts\TrashCan.cs" />
-     <Compile Include="Assets\Scripts\Sandie.cs" />
-     <Compile Include="Assets\Scripts\Enemy.cs" />
+     <Compile Include="Assets\Scripts\TestTest.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\Art" />
      <Folder Include="Assets\Scripts" />
