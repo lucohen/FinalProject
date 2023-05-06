@@ -68,6 +68,7 @@
     <Compile Include="Assets/Scripts/Sandie.cs" />
     <Compile Include="Assets/Scripts/TestTest.cs" />
     <Compile Include="Assets/Scripts/Enemy.cs" />
+    <Compile Include="Assets/Scripts/Character.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

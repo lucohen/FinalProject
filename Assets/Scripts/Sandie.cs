@@ -1,20 +1,21 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class Sandie : MonoBehaviour
+public class Sandie : Character
 {
     public SpriteRenderer CorgiSpriteRenderer;
-    public Sprite SoberSprite;
+    public Sprite HatSprite;
     public Sprite DrunkSprite;
     public Game Game;
 
-    private bool isDrunk = false;
-    private bool isPlastered = false;
+    private bool isFast = false;
+    private bool isInvisible = false;
 
-    private int lastRandomDirection = 1;
-    private int randomMoveCountdown = 0;
+    private int killshots = 0;
+    private int mines = 0;
 
     private bool isPlaying = false;
 
@@ -23,8 +24,6 @@ public class Sandie : MonoBehaviour
         if (HasGameJustEnded())
             ResetSandie();
 
-        if (isPlastered)
-            MoveRandomly();
     }
 
     public void StartGame()
@@ -48,16 +47,21 @@ public class Sandie : MonoBehaviour
 
         ResetPositionAndDirection();
 
-        SoberUp();
+        RemovePowersAndItems();
 
-        CleanUpPoop();
+        CleanUpMines();
     }
 
-
-
-    private void CleanUpPoop()
+    private void RemovePowersAndItems()
     {
-        foreach (GameObject placedObject in GameObject.FindGameObjectsWithTag("Poop"))
+        killshots = 0;
+        mines = 0;
+        EndPower();
+    }
+
+    private void CleanUpMines()
+    {
+        foreach (GameObject placedObject in GameObject.FindGameObjectsWithTag("Mine"))
         {
             Destroy(placedObject);
         }
@@ -71,14 +75,11 @@ public class Sandie : MonoBehaviour
 
     public void MoveManually(Vector2 direction)
     {
-        if (isPlastered)
-            return;
         Move(direction);
     }
 
     public void Move(Vector2 direction)
     {
-        direction = ApplyDrunkenness(direction);
         FaceCorrectDirection(direction);
 
         float xAmount = direction.x * GameParameters.CorgiMoveAmount;
@@ -89,35 +90,7 @@ public class Sandie : MonoBehaviour
         keepOnScreen();
     }
 
-    public void MoveRandomly()
-    {
-        int newDirection = lastRandomDirection;
-
-        if (randomMoveCountdown == 0)
-        {
-            newDirection = Random.Range(1, 5);
-            randomMoveCountdown = Random.Range(40, 80);
-            lastRandomDirection = newDirection;
-        }
-
-        switch (newDirection)
-        {
-            case 1:
-                Move(new Vector2(1, 0));
-                break;
-            case 2:
-                Move(new Vector2(-1, 0));
-                break;
-            case 3:
-                Move(new Vector2(0, 1));
-                break;
-            case 4:
-                Move(new Vector2(0, -1));
-                break;
-        }
-
-        randomMoveCountdown = randomMoveCountdown - 1;
-    }
+    
 
     public void FaceCorrectDirection(Vector2 direction)
     {
@@ -135,17 +108,14 @@ public class Sandie : MonoBehaviour
     {
         if (col.gameObject.tag == "Beer")
         {
-            GetDrunk();
             print("Beer");
         }
 
         if (col.gameObject.tag == "Pill")
         {
-            SoberUp();
         }
         if (col.gameObject.tag == "Moonshine")
         {
-            GetPlastered();
         }
         Destroy(col.gameObject);
     }
@@ -171,41 +141,23 @@ public class Sandie : MonoBehaviour
         CorgiSpriteRenderer.transform.position = SpriteTools.ConstrainToScreen(CorgiSpriteRenderer);
     }
 
-    private void GetPlastered()
-    {
-        isPlastered = true;
-        Inebriate();
-    }
+    
 
-    private void Inebriate()
-    {
-        ChangeToDrunkSprite();
-        StartCoroutine(WaitToSoberUp());
-    }
-
-    private void GetDrunk()
-    {
-        isDrunk = true;
-        Inebriate();
-
-    }
-
-    IEnumerator WaitToSoberUp()
+    IEnumerator WaitToEndPower()
     {
         yield return new WaitForSeconds(7f);
-        SoberUp();
+        EndPower();
     }
 
-    private void SoberUp()
+    private void EndPower()
     {
-        ChangeToSoberSprite();
-        isDrunk = false;
-        isPlastered = false;
+        isInvisible = false;
+        isFast = false;
     }
 
-    private void ChangeToSoberSprite()
+    private void ChangeToHatSprite()
     {
-        CorgiSpriteRenderer.sprite = SoberSprite;
+        CorgiSpriteRenderer.sprite = HatSprite;
     }
 
     private void ChangeToDrunkSprite()
@@ -213,14 +165,5 @@ public class Sandie : MonoBehaviour
         CorgiSpriteRenderer.sprite = DrunkSprite;
     }
 
-    private Vector2 ApplyDrunkenness(Vector2 direction)
-    {
-        if (isDrunk)
-        {
-            direction.x = direction.x * -1;
-            direction.y = direction.y * -1;
-        }
-
-        return direction;
-    }
+    
 }
