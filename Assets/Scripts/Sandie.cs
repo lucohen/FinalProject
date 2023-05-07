@@ -21,8 +21,8 @@ public class Sandie : Character
 
     public void Update()
     {
-        if (HasGameJustEnded())
-            ResetSandie();
+       // if (HasGameJustEnded())
+         //   ResetSandie();
 
     }
 

@@ -69,6 +69,7 @@
     <Compile Include="Assets/Scripts/TestTest.cs" />
     <Compile Include="Assets/Scripts/Enemy.cs" />
     <Compile Include="Assets/Scripts/Character.cs" />
+    <Compile Include="Assets/Scripts/RandomObjectPlacer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
