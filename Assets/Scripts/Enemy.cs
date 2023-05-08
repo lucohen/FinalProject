@@ -19,6 +19,7 @@ public class Enemy : MonoBehaviour
 
     public void Update()
     {
+       //Move();
         if (HasGameJustEnded())
             ResetEnemy();
     }
@@ -70,8 +71,8 @@ public class Enemy : MonoBehaviour
     {
         FaceCorrectDirection(direction);
 
-        float xAmount = direction.x * GameParameters.CorgiMoveAmount;
-        float yAmount = direction.y * GameParameters.CorgiMoveAmount;
+        float xAmount = direction.x * GameParameters.EnemyMoveAmount;
+        float yAmount = direction.y * GameParameters.EnemyMoveAmount;
         Vector3 moveAmount = new Vector3(xAmount, yAmount, z: 0f);
         EnemySpriteRenderer.transform.Translate(moveAmount);
 
