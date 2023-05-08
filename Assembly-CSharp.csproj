@@ -56,6 +56,7 @@
     <Analyzer Include="/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/MonoDevelop.Unity/Analyzers/Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets/Scripts/Character.cs" />
     <Compile Include="Assets/Scripts/GameParameters.cs" />
     <Compile Include="Assets/Scripts/MinePlacer.cs" />
     <Compile Include="Assets/Scripts/SpriteTools.cs" />
@@ -68,7 +69,6 @@
     <Compile Include="Assets/Scripts/Sandie.cs" />
     <Compile Include="Assets/Scripts/TestTest.cs" />
     <Compile Include="Assets/Scripts/Enemy.cs" />
-    <Compile Include="Assets/Scripts/Character.cs" />
     <Compile Include="Assets/Scripts/RandomObjectPlacer.cs" />
   </ItemGroup>
   <ItemGroup>
