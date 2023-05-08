@@ -7,8 +7,8 @@ public class UI : MonoBehaviour
 {
     public CanvasGroup StartScreenCanvasGroup;
     public CanvasGroup EndScreenCanvasGroup;
-    //public Text ScoreText;
-    //public Text TimeText;
+    public Text ScoreText;
+    public Text TimeText;
 
     public void Update()
     { 
