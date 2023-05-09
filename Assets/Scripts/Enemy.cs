@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     public Sprite EnemySprite;
     public Sprite AlertedEnemySprite;
     public Game Game;
+    public HatPlacer HatPlacer;
 
     private bool isAlerted = false;
     private bool movingUp = false;
@@ -164,6 +165,8 @@ public class Enemy : MonoBehaviour
         }
     }
 
+
+
         private void moveUp()
     {
         transform.Translate(Vector3.up * GameParameters.EnemyMoveAmount);
@@ -195,6 +198,7 @@ private void Die()
     {
         Destroy(gameObject);
         //chance to randomly drop an item
+        HatPlacer.Place(this.transform.position);
     }
 }
 

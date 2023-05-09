@@ -29,7 +29,11 @@ public class KeyboardInput : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            MinePlacer.Place(Sandie.transform.position);
+            if (Sandie.mines > 0)
+            {
+                MinePlacer.Place(Sandie.transform.position);
+                Sandie.mines--;
+            }
         }
     }
 }

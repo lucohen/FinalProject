@@ -10,12 +10,12 @@ public class Sandie : Character
     public Sprite HatSprite;
     public Sprite BaseSprite;
     public Game Game;
+    public int mines = 2;
 
     private bool isFast = false;
     private bool isInvisible = false;
 
     private int killshots = 0;
-    private int mines = 0;
 
     private bool isPlaying = false;
 
@@ -29,6 +29,11 @@ public class Sandie : Character
     public void StartGame()
     {
         isPlaying = true;
+    }
+
+    public int getMines()
+    {
+        return mines;
     }
 
     private bool HasGameJustEnded()
@@ -106,18 +111,20 @@ public class Sandie : Character
 
     public void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.tag == "Beer")
+        if (col.gameObject.tag == "Hat")
         {
-            print("Beer");
+            ChangeToHatSprite();
+
+            Destroy(col.gameObject);
         }
 
-        if (col.gameObject.tag == "Pill")
+        if (col.gameObject.tag == "Bone")
         {
+            killshots++;
         }
         if (col.gameObject.tag == "Moonshine")
         {
         }
-        Destroy(col.gameObject);
     }
 
     public void OnCollisionEnter2D(Collision2D col)
@@ -158,6 +165,15 @@ public class Sandie : Character
     private void ChangeToHatSprite()
     {
         CorgiSpriteRenderer.sprite = HatSprite;
+    }
+
+    private void Attack()
+    {
+        if (killshots > 0)
+        {
+            killshots--;
+            //somehow destroy enemy within range
+        }
     }
 
     
