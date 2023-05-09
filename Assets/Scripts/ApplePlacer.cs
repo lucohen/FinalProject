@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class ApplePlacer : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject ApplePrefab;
 
-    // Update is called once per frame
-    void Update()
+    public void Place(Vector3 enemyPosition)
     {
-        
+        //what, where, rotation
+        Instantiate(ApplePrefab, enemyPosition, Quaternion.identity);
     }
 }

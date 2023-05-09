@@ -121,9 +121,12 @@ public class Sandie : Character
         if (col.gameObject.tag == "Bone")
         {
             killshots++;
+            Destroy(col.gameObject);
         }
-        if (col.gameObject.tag == "Moonshine")
+        if (col.gameObject.tag == "Apple")
         {
+            mines++;
+            Destroy(col.gameObject);
         }
     }
 

@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
     public Sprite AlertedEnemySprite;
     public Game Game;
     public HatPlacer HatPlacer;
+    public ApplePlacer ApplePlacer;
 
     private bool isAlerted = false;
     private bool movingUp = false;
@@ -198,7 +199,16 @@ private void Die()
     {
         Destroy(gameObject);
         //chance to randomly drop an item
-        HatPlacer.Place(this.transform.position);
+        float droppedItem = Random.Range(0, 3);
+        if (droppedItem < 1)
+        {
+            HatPlacer.Place(this.transform.position);
+        }
+        else
+        {
+            ApplePlacer.Place(this.transform.position);
+        }
+
     }
 }
 
