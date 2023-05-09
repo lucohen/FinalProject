@@ -154,7 +154,17 @@ public class Enemy : MonoBehaviour
     
     }
 
-    private void moveUp()
+    public void OnTriggerEnter(Collider col)
+    {
+        if (col.gameObject.tag == "Mine")
+        {
+            Die();
+            print("Dead");
+            Destroy(col);
+        }
+    }
+
+        private void moveUp()
     {
         transform.Translate(Vector3.up * GameParameters.EnemyMoveAmount);
     }
