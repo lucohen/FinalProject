@@ -8,7 +8,7 @@ public class Sandie : Character
 {
     public SpriteRenderer CorgiSpriteRenderer;
     public Sprite HatSprite;
-    public Sprite DrunkSprite;
+    public Sprite BaseSprite;
     public Game Game;
 
     private bool isFast = false;
@@ -158,11 +158,6 @@ public class Sandie : Character
     private void ChangeToHatSprite()
     {
         CorgiSpriteRenderer.sprite = HatSprite;
-    }
-
-    private void ChangeToDrunkSprite()
-    {
-        CorgiSpriteRenderer.sprite = DrunkSprite;
     }
 
     

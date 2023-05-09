@@ -11,15 +11,18 @@ public class Enemy : MonoBehaviour
     public Game Game;
 
     private bool isAlerted = false;
+    private bool movingUp = false;
+    private bool movingRight = false;
 
-    private int lastRandomDirection = 1;
+    public float moveDistance = 3.0f;
     private int randomMoveCountdown = 0;
 
     private bool isPlaying = false;
 
     public void Update()
     {
-       //Move();
+        //Move();
+        moveUpAndDown();
         if (HasGameJustEnded())
             ResetEnemy();
     }
@@ -79,35 +82,7 @@ public class Enemy : MonoBehaviour
         keepOnScreen();
     }
 
-    public void MoveRandomly()
-    {
-        int newDirection = lastRandomDirection;
-
-        if (randomMoveCountdown == 0)
-        {
-            newDirection = Random.Range(1, 5);
-            randomMoveCountdown = Random.Range(40, 80);
-            lastRandomDirection = newDirection;
-        }
-
-        switch (newDirection)
-        {
-            case 1:
-                Move(new Vector2(1, 0));
-                break;
-            case 2:
-                Move(new Vector2(-1, 0));
-                break;
-            case 3:
-                Move(new Vector2(0, 1));
-                break;
-            case 4:
-                Move(new Vector2(0, -1));
-                break;
-        }
-
-        randomMoveCountdown = randomMoveCountdown - 1;
-    }
+    
 
     public void FaceCorrectDirection(Vector2 direction)
     {
@@ -151,6 +126,44 @@ public class Enemy : MonoBehaviour
         ChangeToAlertedSprite();
         isAlerted = true;
     }
+
+    public void moveUpAndDown()
+    {
+
+        // Check if the object has reached its maximum distance and needs to start moving down
+        if (transform.position.y >= moveDistance && movingUp)
+        {
+            movingUp = false;
+        }
+
+        // Check if the object has reached its minimum distance and needs to start moving up
+        if (transform.position.y <= 0 && !movingUp)
+        {
+            movingUp = true;
+        }
+
+        // Should add a small wait time before turning around
+        if (movingUp)
+        {
+            moveUp();
+        }
+        else
+        {
+            moveDown();
+        }
+    
+    }
+
+    private void moveUp()
+    {
+        transform.Translate(Vector3.up * GameParameters.EnemyMoveAmount);
+    }
+
+    private void moveDown()
+    {
+        transform.Translate(Vector3.down * GameParameters.EnemyMoveAmount);
+    }
+
 
     private void keepOnScreen()
     {

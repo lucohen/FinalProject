@@ -4,8 +4,9 @@ using UnityEngine;
 
 public static class GameParameters
 {
-    public static float CorgiMoveAmount = 0.01f;
-    public static float EnemyMoveAmount = 0.01f;
+    public static float CorgiMoveAmount = 0.007f;
+    public static float EnemyMoveAmount = 0.001f;
+
     public static float BeerSecondsOnScreen = 5f;
     public static float BoneSecondsOnScreen = 3f;
     public static float PillSecondsOnScreen = 2f;
