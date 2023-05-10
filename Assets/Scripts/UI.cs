@@ -12,6 +12,7 @@ public class UI : MonoBehaviour
     public Text PowerText;
 
 
+    
     public void Update()
     {
         ShowKillshots();
