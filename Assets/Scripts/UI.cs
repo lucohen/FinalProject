@@ -7,12 +7,16 @@ public class UI : MonoBehaviour
 {
     public CanvasGroup StartScreenCanvasGroup;
     public CanvasGroup EndScreenCanvasGroup;
-    public Text ScoreText;
-    public Text TimeText;
+    public Text KillshotsText;
+    public Text MinesText;
+    public Text PowerText;
+
 
     public void Update()
-    { 
-       // ShowScore();
+    {
+        ShowKillshots();
+        ShowMines();
+        
     }
 
 
@@ -36,9 +40,14 @@ public class UI : MonoBehaviour
         CanvasGroupDisplayer.Show(EndScreenCanvasGroup);
     }
 
-    //public void ShowScore()
-    //{
-    //    ScoreText.text = "Score: " + ScoreKeeper.GetScore();
-    //}
+    public void ShowKillshots()
+    {
+        KillshotsText.text = "Killshots -  " + NumbersKeeper.GetKillshots();
+    }
+
+    public void ShowMines()
+    {
+        MinesText.text = "Mines - " + NumbersKeeper.GetMines();
+    }
 
 }

@@ -2,17 +2,37 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public static class ScoreKeeper
+public static class NumbersKeeper
 {
-    private static int score = 0;
+    private static int killshots;
+    private static int mines = 2;
 
-    public static int GetScore()
+    public static int GetKillshots()
     {
-        return score;
+        return killshots;
     }
 
-    public static void AddToScore(int amount)
+    public static int GetMines()
     {
-        score = score + amount;
+        return mines;
+    }
+
+    public static void AddToKillshots()
+    {
+        killshots++;
+    }
+
+    public static void LoseKillshot()
+    {
+        killshots--;
+    }
+
+    public static void AddToMines()
+    {
+        mines++;
+    }
+    public static void LoseMine()
+    {
+        mines--;
     }
 }

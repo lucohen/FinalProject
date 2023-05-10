@@ -121,11 +121,13 @@ public class Sandie : Character
         if (col.gameObject.tag == "Bone")
         {
             killshots++;
+            NumbersKeeper.AddToKillshots();
             Destroy(col.gameObject);
         }
         if (col.gameObject.tag == "Apple")
         {
             mines++;
+            NumbersKeeper.AddToMines();
             Destroy(col.gameObject);
         }
     }

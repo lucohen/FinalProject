@@ -33,6 +33,7 @@ public class KeyboardInput : MonoBehaviour
             {
                 MinePlacer.Place(Sandie.transform.position);
                 Sandie.mines--;
+                NumbersKeeper.LoseMine();
             }
         }
     }
