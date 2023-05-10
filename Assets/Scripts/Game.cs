@@ -11,8 +11,9 @@ public class Game : MonoBehaviour
 
     public void Start()
     {
-        UI.ShowStartScreen();
         UI.HideEndScreen();
+        UI.ShowStartScreen();
+        
     }
 
     public void Update()
