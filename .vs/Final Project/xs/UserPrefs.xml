@@ -1,22 +1,23 @@
 ﻿<Properties StartupConfiguration="{4ABD25F2-7453-1E14-1C63-BCE00338D1E5}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/HatPlacer.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/NumbersKeeper.cs">
     <Files>
-      <File FileName="Assets/Scripts/Enemy.cs" Line="201" Column="46" />
+      <File FileName="Assets/Scripts/Enemy.cs" Line="208" Column="10" />
       <File FileName="Assets/Scripts/Character.cs" Line="10" Column="9" />
       <File FileName="Assets/Scripts/RandomObjectPlacer.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/KeyboardInput.cs" Line="31" Column="10" />
-      <File FileName="Assets/Scripts/Sandie.cs" Line="127" Column="21" />
+      <File FileName="Assets/Scripts/Sandie.cs" Line="129" Column="37" />
       <File FileName="Assets/Scripts/Game.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/SpriteTools.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/TrashCan.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/UI.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/CanvasGroupDisplayer.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/GameParameters.cs" Line="8" Column="47" />
+      <File FileName="Assets/Scripts/GameParameters.cs" Line="8" Column="48" />
       <File FileName="Assets/Scripts/Item.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/MinePlacer.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Hat.cs" Line="7" Column="2" />
-      <File FileName="Assets/Scripts/HatPlacer.cs" Line="15" Column="1" />
-      <File FileName="Assets/Scripts/ApplePlacer.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/HatPlacer.cs" Line="7" Column="5" />
+      <File FileName="Assets/Scripts/ApplePlacer.cs" Line="11" Column="32" />
+      <File FileName="Assets/Scripts/NumbersKeeper.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -24,7 +25,7 @@
           <Node name="Final Project" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="HatPlacer.cs" selected="True" />
+                <Node name="NumbersKeeper.cs" selected="True" />
               </Node>
             </Node>
           </Node>

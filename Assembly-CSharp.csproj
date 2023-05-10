@@ -74,6 +74,7 @@
     <Compile Include="Assets/Scripts/Hat.cs" />
     <Compile Include="Assets/Scripts/HatPlacer.cs" />
     <Compile Include="Assets/Scripts/ApplePlacer.cs" />
+    <Compile Include="Assets/Scripts/NumbersKeeper.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
