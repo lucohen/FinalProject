@@ -19,8 +19,8 @@ public class Game : MonoBehaviour
 
     public void Update()
     {
-        //if (HasGameJustEnded())
-          //  EndGame();
+        if (HasGameJustEnded())
+            EndGame();
     }
 
     public void StartGame()
@@ -34,6 +34,15 @@ public class Game : MonoBehaviour
 
         Sandie.StartGame();
 
+    }
+
+    public bool HasGameJustEnded()
+    {
+        if (isRunning && Sandie.isDead == true)
+        {
+            return true;
+        }
+        return false;
     }
 
 

@@ -4,15 +4,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class Sandie : Character
+public class Sandie : MonoBehaviour
 {
     public SpriteRenderer CorgiSpriteRenderer;
     public Sprite HatSprite;
     public Sprite BaseSprite;
     public Game Game;
     public int mines = 2;
+    public bool isDead = false;
 
-    private bool isFast = false;
     private bool isInvisible = false;
 
     private int killshots = 0;
@@ -21,8 +21,8 @@ public class Sandie : Character
 
     public void Update()
     {
-       // if (HasGameJustEnded())
-         //   ResetSandie();
+        if (HasGameJustEnded())
+            ResetSandie();
 
     }
 
@@ -114,7 +114,7 @@ public class Sandie : Character
         if (col.gameObject.tag == "Hat")
         {
             ChangeToHatSprite();
-
+            StartCoroutine(WaitToEndPower());
             Destroy(col.gameObject);
         }
 
@@ -158,19 +158,27 @@ public class Sandie : Character
     IEnumerator WaitToEndPower()
     {
         yield return new WaitForSeconds(7f);
+
         EndPower();
     }
 
     private void EndPower()
     {
         isInvisible = false;
-        isFast = false;
+        ChangeToBaseSprite();
     }
 
     private void ChangeToHatSprite()
     {
         CorgiSpriteRenderer.sprite = HatSprite;
+        isInvisible = true;
     }
+
+    private void ChangeToBaseSprite()
+    {
+        CorgiSpriteRenderer.sprite = BaseSprite;
+    }
+
 
     private void Attack()
     {
