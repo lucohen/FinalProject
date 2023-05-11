@@ -6,6 +6,7 @@ public class Game : MonoBehaviour
 {
     public UI UI;
     public Sandie Sandie;
+    public Sounds Sounds;
 
     private bool isRunning;
 
@@ -28,6 +29,7 @@ public class Game : MonoBehaviour
 
         UI.HideStartScreen();
         UI.HideEndScreen();
+        Sounds.PlayPlayButtonSound();
 
 
         Sandie.StartGame();
