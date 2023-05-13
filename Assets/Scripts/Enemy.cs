@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
     public Game Game;
     public HatPlacer HatPlacer;
     public ApplePlacer ApplePlacer;
+    public VisionCone VisionCone;
 
     private bool isAlerted = false;
     private bool movingUp = false;
@@ -136,21 +137,25 @@ public class Enemy : MonoBehaviour
         if (transform.position.y >= moveDistance && movingUp)
         {
             movingUp = false;
+            
         }
 
         // Check if the object has reached its minimum distance and needs to start moving up
         if (transform.position.y <= 0 && !movingUp)
         {
             movingUp = true;
+
         }
 
         // Should add a small wait time before turning around
         if (movingUp)
         {
+            VisionCone.transform.eulerAngles = new Vector3(0f, 0f, 0f);
             moveUp();
         }
         else
         {
+            VisionCone.transform.eulerAngles = new Vector3(0f, 0f, 180f);
             moveDown();
         }
     
